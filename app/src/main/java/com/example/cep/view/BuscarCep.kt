@@ -105,8 +105,13 @@ fun BuscarCep(
                         .padding(0.dp, 60.dp, 20.dp, 10.dp)
                         .height(55.dp),
                     onClick = {
-                        viewModel.respostaApi(inputCep, object : RespostaApi{
-                            override fun onSucess(logradouro: String, bairro: String, localidade: String, uf: String) {
+                        viewModel.respostaApi(inputCep, object : RespostaApi {
+                            override fun onSucess(
+                                logradouro: String,
+                                bairro: String,
+                                localidade: String,
+                                uf: String
+                            ) {
                                 inputLogradouro = logradouro
                                 inputBairro = bairro
                                 inputCidade = localidade
@@ -114,7 +119,7 @@ fun BuscarCep(
                             }
 
                             override fun onFailure(erro: String) {
-                                Toast.makeText(context,erro, Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, erro, Toast.LENGTH_SHORT).show()
                             }
 
                         })
@@ -178,7 +183,13 @@ fun BuscarCep(
                     modifier = Modifier
                         .padding(20.dp)
                         .height(55.dp),
-                    onClick = { },
+                    onClick = {
+                        if(inputCep.isEmpty() || inputLogradouro.isEmpty() || inputBairro.isEmpty() || inputCidade.isEmpty() || inputEstado.isEmpty()){
+                            Toast.makeText(context, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+                        } else {
+                            navController.navigate("detail/${inputLogradouro}/${inputBairro}/${inputCidade}/${inputEstado}")
+                        }
+                    },
                     texto = "Avançar"
                 )
             }
