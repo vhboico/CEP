@@ -4,6 +4,7 @@ CEP é um aplicativo que tem como principal função buscar qualquer CEP do Bras
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
+<img src="/result/image_1.png" width="260">&emsp;<img src="/result/image_2.png" width="260">&emsp;<img src="/result/image_3.png" width="260">
 
 ## Tecnologias
 * Kotlin
@@ -14,6 +15,9 @@ CEP é um aplicativo que tem como principal função buscar qualquer CEP do Bras
 * Retrofit
 * ViewModel
 * ViewModelScope
+* NavHost
+* NavController
+* NavArguments
 * Button
 * OutlinedTextField
 * Scaffold
